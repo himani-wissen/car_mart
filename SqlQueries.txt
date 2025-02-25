@@ -1,0 +1,12 @@
+Create Database Cardb;
+
+CREATE TABLE cars (
+    carId SERIAL PRIMARY KEY,         
+    company VARCHAR(100) NOT NULL,    
+    model VARCHAR(100) NOT NULL,      
+    seater INT CHECK (seater > 0),    
+    fuelType VARCHAR(20) CHECK (fuelType IN ('Petrol', 'Diesel', 'Electric')), 
+    carType VARCHAR(50),
+    price INT CHECK (price > 0),      
+    sold BOOLEAN DEFAULT FALSE        
+);
